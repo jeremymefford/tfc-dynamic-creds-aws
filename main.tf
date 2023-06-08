@@ -1,6 +1,6 @@
 variable "tfc_hostname" {
   type        = string
-  default     = "https://app.terraform.io"
+  default     = "app.terraform.io"
   description = "The hostname of the TFC or TFE instance you'd like to use with AWS"
 }
 
@@ -17,7 +17,7 @@ variable "tfc_project_name" {
 }
 
 data "tls_certificate" "tfc" {
-  url = var.tfc_hostname
+  url = "https://${var.tfc_hostname}"
 }
 
 # Creates an OIDC provider which is restricted to
