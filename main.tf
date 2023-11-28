@@ -64,8 +64,8 @@ EOF
 # the previously created role has within AWS.
 #
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
-data "aws_iam_policy" "power_user" {
-  name        = "PowerUserAccess"
+data "aws_iam_policy" "admin" {
+  name        = "AdministratorAccess"
 }
 
 # Creates an attachment to associate the above policy with the
@@ -74,5 +74,5 @@ data "aws_iam_policy" "power_user" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment
 resource "aws_iam_role_policy_attachment" "tfc" {
   role       = aws_iam_role.tfc.name
-  policy_arn = data.aws_iam_policy.power_user.arn
+  policy_arn = data.aws_iam_policy.admin.arn
 }
