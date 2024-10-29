@@ -12,7 +12,7 @@ variable "tfc_organization_name" {
 
 variable "tfc_project_name" {
   type        = string
-  default     = "Default Project"
+  default     = "*"
   description = "The project under which a workspace will be created"
 }
 
@@ -65,7 +65,7 @@ EOF
 #
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
 data "aws_iam_policy" "admin" {
-  name        = "AdministratorAccess"
+  name = "AdministratorAccess"
 }
 
 # Creates an attachment to associate the above policy with the
