@@ -1,11 +1,11 @@
 terraform {
 
   cloud {
-    organization = "weigand-hcp"
+    organization = "team-rts"
     hostname     = "app.terraform.io" 
 
     workspaces {
-      name = "dynamic-creds-aws"
+      name = "tfc-dynamic-creds-aws"
     }
   }
 
