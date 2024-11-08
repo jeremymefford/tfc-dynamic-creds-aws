@@ -5,7 +5,7 @@ terraform {
     hostname     = "app.terraform.io" 
 
     workspaces {
-      name = "tfc-dynamic-creds-aws"
+      name = "jmefford-tfc-dynamic-creds-aws"
     }
   }
 
